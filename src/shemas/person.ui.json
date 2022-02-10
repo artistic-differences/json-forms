@@ -1,0 +1,19 @@
+
+{
+    "ui:field": "layout",
+    "ui:layout": [
+        {
+            "firstName": {
+                "md": 6
+            },
+            "lastName": {
+                "md": 6
+            }
+        },
+        {
+            "startDate": {
+                "md": 12
+            }
+        }
+    ]
+}

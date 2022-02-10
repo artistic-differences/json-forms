@@ -1,0 +1,24 @@
+{
+    "id": "/schemas/person",
+    "title": "Person Schema",
+    "type": "object",
+    "required": [
+      "firstName",
+      "lastName"
+    ],
+    "properties": {
+      "firstName": {
+        "type": "string",
+        "title": "First name"
+      },    
+      "lastName": {
+        "type": "string",
+        "title": "Last name"
+      },
+      "startDate": {
+        "type": "string",
+        "format": "date",
+        "title": "Start Date"
+      }
+    }
+  }

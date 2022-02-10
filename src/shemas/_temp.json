@@ -1,0 +1,11 @@
+{
+    "id": "/schemas/department",
+    "type": "object",
+    "title": "Department",
+    "properties": {
+        "name": {
+            "type": "string",
+            "title": "Department"
+        }
+    }
+}

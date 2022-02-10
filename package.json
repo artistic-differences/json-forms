@@ -1,0 +1,21 @@
+{
+  "name": "Json Bank",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@rjsf/core": "^3.2.1",
+    "idb-keyval": "^6.1.0",
+    "preact": "^10.5.15",
+    "preact-async-route": "^2.2.1",
+    "preact-router": "^4.0.1",
+    "react-bootstrap": "^2.1.2"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.1.5",
+    "vite": "^2.7.2"
+  }
+}
