@@ -8,17 +8,22 @@ const fields = {
 }
 
 export function Viewer(props) {
+
+  const {matches} = props;
+  const {schema :urlSchema, record: urlRecord} = matches;
+  
   const [keyValues, setKeys] = useState([]);
   const [currentSchema, setCurrentSchema] = useState({});
   const [currentSchemaKey, setCurrentSchemaKey] = useState('');
   const [currentFormData, setCurrentFormData] = useState({});
   const [currentListData, setCurrentListData] = useState([]);
   const [currentRecordIdx, setCurrentRecordIdx] = useState(-1);
-  
-  
+    
   async function  getKeys() {
     const allKeys = await keys();
-    const schemaKeys = allKeys.filter(r=> r.indexOf('/schema/') === 0)
+    const schemaKeys = allKeys.filter(r => {
+      return r.indexOf('/schema/') === 0 && r.indexOf('/list') === -1
+    })
     setKeys(schemaKeys);
   }
 
@@ -35,6 +40,12 @@ export function Viewer(props) {
 
   useEffect(()=>{
     getKeys();
+    if (urlSchema) {
+      setCurrentSchemaKey(`/schema/${urlSchema}`);
+      setTimeout(()=>{
+        setCurrentRecordIdx(urlRecord);
+      },500)
+    }
   }, [])
 
   useEffect(()=>{
@@ -49,6 +60,8 @@ export function Viewer(props) {
   const onSubmit = async({formData}, e) => {
     const key = `/data${currentSchemaKey}`
     const listData = JSON.parse(JSON.stringify(currentListData)); //clone
+
+    formData.id=currentRecordIdx != -1 ? currentRecordIdx : listData.length.toString();
     if (currentRecordIdx == -1) {
       listData.push(formData);
     } else {

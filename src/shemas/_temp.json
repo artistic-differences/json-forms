@@ -1,11 +1,8 @@
 {
-    "id": "/schemas/department",
-    "type": "object",
-    "title": "Department",
-    "properties": {
-        "name": {
-            "type": "string",
-            "title": "Department"
-        }
-    }
+    "pkName": "id",
+    "shownFieldNames": ["firstName", "lastName", "startDate"],
+    "actions" : [{"name": "function"}],
+    "shownFields" : [
+        {"fieldName": "control"}
+    ]
 }

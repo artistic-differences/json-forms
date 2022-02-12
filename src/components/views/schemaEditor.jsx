@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'preact/hooks';
 import Form from "@rjsf/core";
 import { set, get, keys } from "idb-keyval";
-import { VMEditor } from "../forms/vmEditor";
-import { UIEditor } from "../forms/uiEditor";
 
 const vmSchema = {
   "type": "object",
